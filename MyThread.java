@@ -13,5 +13,25 @@ public class MyThread extends Thread {
     }
 
     
+    // Method that performs the increment operation in a loop
+    private void performIncrementOperation() {
+        while (true) {
+            try {
+                // Printing current value
+                System.out.println("Thread " + getName() + ": " + currentValue);
+
+                // Incrementing value
+                currentValue += incrementStep;
+
+                // Sleeping for specified delay
+                Thread.sleep(delayInMillis);
+            } catch (InterruptedException e) {
+                // Handling interruption
+                System.out.println("Thread " + getName() + " interrupted.");
+                break; // Exit loop if interrupted
+            }
+        }
+    }
+
 
 }
