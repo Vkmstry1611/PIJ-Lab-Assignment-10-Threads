@@ -33,5 +33,10 @@ public class MyThread extends Thread {
         }
     }
 
+    // Overridden run method where thread execution begins
+    @Override
+    public void run() {
+        performIncrementOperation();
+    }
 
 }
